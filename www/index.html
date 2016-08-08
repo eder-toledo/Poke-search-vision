@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>Poke search vision</title>
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/material.min.css" />
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="bower_components/Leaflet.label/dist/leaflet.label.css" />
+    <link rel="stylesheet" href="bower_components/dialog-polyfill/dialog-polyfill.css" />
+
+    <style>
+        #locationUser {
+            position: fixed;
+            display: block;
+            right: 0;
+            bottom: 0;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            z-index: 900;
+        }
+        
+        #map,
+        .android-content {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+        <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+            <div class="mdl-layout__header-row">
+                <div class="android-header-spacer mdl-layout-spacer"></div>
+                <span class="android-mobile-title mdl-layout-title">
+            <img src="img/icon-app.png" width="20px">
+             Poke search vision
+          </span>
+            </div>
+        </div>
+
+        <div class="android-drawer mdl-layout__drawer">
+            <span class="mdl-layout-title">
+          <img id="banner" src="img/banner.png">
+        </span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link show-modal" href="#">Donate</a>
+                <a class="mdl-navigation__link show-modal2" href="#">About</a>
+            </nav>
+        </div>
+
+        <div class="android-content mdl-layout__content">
+            <div id="map"></div>
+        </div>
+        <button id="locationUser" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">more_vert</i>
+        </button>
+
+        <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="locationUser">
+            <li class="mdl-menu__item" onclick="getLocation()">My location</li>
+            <li class="mdl-menu__item" onclick="getPokemon()">Search pokémon</li>
+        </ul>
+    </div>
+    <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+    </div>
+
+    <dialog class="mdl-dialog donate">
+        <div class="mdl-dialog__content">
+            <p>
+                Support us via Paypal
+            </p>
+        </div>
+        <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+            <button type="button" class="mdl-button"><i class="material-icons">done</i> Donate</button>
+            <button type="button" class="mdl-button close"><i class="material-icons">clear</i> Cancel</button>
+        </div>
+    </dialog>
+    
+    <dialog class="mdl-dialog developers">
+        <div class="mdl-dialog__content">
+            <p>
+                Developer:
+            </p>
+            <p>
+                App developer: <a target="_blank" href="http://twitter.com/@edertoledo1">@etoledo1</a>
+            </p>
+        </div>
+        <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+            <button type="button" class="mdl-button close"> Close</button>
+        </div>
+    </dialog>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/KineticJS/kinetic.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
+    <script src="bower_components/material-design-lite/material.min.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="bower_components/Leaflet.label/dist/leaflet.label.js"></script>
+    <script src="bower_components/dialog-polyfill/dialog-polyfill.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

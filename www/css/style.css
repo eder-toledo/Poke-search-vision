@@ -1,0 +1,13 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map, .page-content{
+    height: 100%;
+}
+
+#locationUser{
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+}
